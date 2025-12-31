@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Obsidian Task Widget</string>
+    <string name="widget_name">Task List</string>
+    <string name="select_folder">Select Task Folder</string>
+    <string name="current_path">Selected Path: %1$s</string>
+    <string name="no_path_selected">No folder selected</string>
+    <string name="permission_required">Permission required to read tasks</string>
+    <string name="refresh">Refresh</string>
+    <string name="empty_view_text">No tasks found or folder not selected</string>
+    <string name="status_format">Status: %1$s | Due: %2$s</string>
+</resources>
