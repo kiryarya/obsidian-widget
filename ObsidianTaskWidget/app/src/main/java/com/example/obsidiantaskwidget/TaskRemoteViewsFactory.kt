@@ -9,12 +9,12 @@ class TaskRemoteViewsFactory(private val context: Context) : RemoteViewsService.
     private var tasks: List<Task> = emptyList()
 
     override fun onCreate() {
-        // Initial load
+        // 初期ロード
     }
 
     override fun onDataSetChanged() {
-        // This is called when notifyAppWidgetViewDataChanged is triggered
-        // It runs on a background thread
+        // notifyAppWidgetViewDataChangedがトリガーされたときに呼び出されます
+        // バックグラウンドスレッドで実行されます
         tasks = TaskRepository.getTasks(context)
     }
 

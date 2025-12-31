@@ -50,7 +50,7 @@ object TaskRepository {
             var line: String? = reader.readLine()
             if (line?.trim() != "---") {
                 reader.close()
-                return null // Not a valid YAML frontmatter start
+                return null // 有効なYAMLフロントマターの開始ではありません
             }
 
             var title: String? = null
@@ -58,7 +58,7 @@ object TaskRepository {
             var due: String? = null
             var priority: String? = null
 
-            // Limit reading to first 50 lines to avoid reading whole huge files
+            // 巨大なファイル全体を読み込むのを避けるため、最初の50行に制限します
             var count = 0
             while (count < 50) {
                 line = reader.readLine()
@@ -77,7 +77,7 @@ object TaskRepository {
             inputStream.close()
 
             if (status != null) {
-                // If title is missing in YAML, use filename without extension
+                // YAMLにタイトルがない場合は、拡張子なしのファイル名を使用します
                 val finalTitle = title ?: file.name?.removeSuffix(".md") ?: "Untitled"
                 return Task(finalTitle, status, due, priority, file.name ?: "")
             }
@@ -89,7 +89,7 @@ object TaskRepository {
     }
 
     private fun parseValue(line: String): String {
-        // Removes "key: " and quotes
+        // "key: " と引用符を削除します
         val parts = line.split(":", limit = 2)
         if (parts.size < 2) return ""
         var value = parts[1].trim()

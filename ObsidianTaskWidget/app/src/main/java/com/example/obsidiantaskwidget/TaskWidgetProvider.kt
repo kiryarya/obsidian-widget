@@ -45,7 +45,7 @@ internal fun updateAppWidget(
 ) {
     val views = RemoteViews(context.packageName, R.layout.widget_layout)
 
-    // Set up the collection
+    // コレクションのセットアップ
     val intent = Intent(context, TaskWidgetService::class.java)
     intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
     intent.data = Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME))
@@ -53,7 +53,7 @@ internal fun updateAppWidget(
     views.setRemoteAdapter(R.id.widget_list, intent)
     views.setEmptyView(R.id.widget_list, R.id.widget_empty_view)
 
-    // Refresh button
+    // 更新ボタン
     val refreshIntent = Intent(context, TaskWidgetProvider::class.java).apply {
         action = TaskWidgetProvider.ACTION_REFRESH
     }

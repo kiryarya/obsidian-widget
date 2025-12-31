@@ -1,41 +1,41 @@
 # Obsidian Tasknotes Widget for Android
 
-This project is an Android App Widget designed to display tasks managed by the [Obsidian Tasknotes plugin](https://github.com/callumalpass/tasknotes).
+このプロジェクトは、[Obsidian Tasknotesプラグイン](https://github.com/callumalpass/tasknotes)で管理されるタスクを表示するためのAndroidアプリウィジェットです。
 
-## Features
+## 機能
 
-*   **Custom Folder Selection**: Select the specific folder in your Obsidian vault where Tasknotes are stored.
-*   **YAML Parsing**: Reads `status`, `due`, and `title` from the YAML frontmatter of Markdown files.
-*   **Widget**: A scrollable list on the home screen showing open tasks.
-*   **Filtering**: Automatically hides tasks marked as `done` or `completed`.
-*   **Manual Refresh**: Button on the widget to reload tasks.
+*   **フォルダ選択**: Obsidian Vault内のTasknotesが保存されている特定のフォルダを選択できます。
+*   **YAML解析**: MarkdownファイルのYAMLフロントマターから `status`、`due`、`title` を読み取ります。
+*   **ウィジェット**: 未完了のタスクをホーム画面上のスクロール可能なリストに表示します。
+*   **フィルタリング**: `done` または `completed` とマークされたタスクを自動的に非表示にします。
+*   **手動更新**: ウィジェット上のボタンでタスクを再読み込みできます。
 
-## How to Build and Install
+## ビルドとインストール方法
 
-Since this is a source code repository, you need to build it using Android Studio or Gradle.
+これはソースコードリポジトリであるため、Android StudioまたはGradleを使用してビルドする必要があります。
 
-### Prerequisites
+### 前提条件
 
 *   Android Studio
-*   Obsidian installed on your Android device (for local file access)
-*   Tasknotes plugin configured in Obsidian
+*   AndroidデバイスにObsidianがインストールされていること（ローカルファイルアクセスのため）
+*   ObsidianでTasknotesプラグインが設定されていること
 
-### Steps
+### 手順
 
-1.  Open this project folder (`ObsidianTaskWidget`) in Android Studio.
-2.  Wait for Gradle to sync.
-3.  Connect your Android device or start an emulator.
-4.  Run the app (`Run > Run 'app'`).
+1.  このプロジェクトフォルダ（`ObsidianTaskWidget`）をAndroid Studioで開きます。
+2.  Gradleの同期が完了するのを待ちます。
+3.  Androidデバイスを接続するか、エミュレータを起動します。
+4.  アプリを実行します（`Run > Run 'app'`）。
 
-## Usage
+## 使い方
 
-1.  **Grant Permission**: When you first open the app, tap "Select Task Folder".
-2.  **Select Folder**: Navigate to your Obsidian Vault > Tasknotes folder (or wherever you store your tasks) and tap "Use this folder".
-3.  **Add Widget**: Go to your Android home screen, long press, select "Widgets", find "Obsidian Task Widget", and drag it to your screen.
-4.  **View Tasks**: The widget should populate with your tasks. Use the refresh icon to update the list if you make changes in Obsidian.
+1.  **権限の付与**: アプリを初めて開く際、「Select Task Folder」をタップします。
+2.  **フォルダ選択**: Obsidian Vault > Tasknotesフォルダ（またはタスクを保存している場所）に移動し、「このフォルダを使用」をタップします。
+3.  **ウィジェットの追加**: Androidのホーム画面に移動し、長押しして「ウィジェット」を選択、「Obsidian Task Widget」を見つけて画面にドラッグします。
+4.  **タスクの表示**: ウィジェットにタスクが表示されます。Obsidianで変更を加えた場合は、更新アイコンを使用してリストを更新してください。
 
-## Notes
+## 注意事項
 
-*   The app uses the `OPEN_DOCUMENT_TREE` permission to access only the folder you select. It does not access your entire vault or other storage.
-*   It assumes tasks are individual Markdown files (one note per task) as per Tasknotes default behavior.
-*   It filters out tasks with status: `done` or `completed`.
+*   このアプリは `OPEN_DOCUMENT_TREE` 権限を使用して、選択されたフォルダのみにアクセスします。Vault全体や他のストレージにはアクセスしません。
+*   Tasknotesのデフォルトの動作に従い、タスクは個別のMarkdownファイル（1タスク1ノート）であることを前提としています。
+*   ステータスが `done` または `completed` のタスクは除外されます。
