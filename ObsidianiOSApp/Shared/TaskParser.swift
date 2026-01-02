@@ -37,7 +37,8 @@ class TaskParser {
         }
     }
 
-    private static func parseTask(filename: String, content: String) -> Task? {
+    // テスト用にinternalに変更
+    static func parseTask(filename: String, content: String) -> Task? {
         let lines = content.components(separatedBy: .newlines)
 
         // YAMLフロントマターの確認

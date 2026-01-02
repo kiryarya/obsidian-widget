@@ -39,3 +39,11 @@
 *   このアプリは `OPEN_DOCUMENT_TREE` 権限を使用して、選択されたフォルダのみにアクセスします。Vault全体や他のストレージにはアクセスしません。
 *   Tasknotesのデフォルトの動作に従い、タスクは個別のMarkdownファイル（1タスク1ノート）であることを前提としています。
 *   ステータスが `done` または `completed` のタスクは除外されます。
+
+## テストの実行
+
+プロジェクトにはユニットテストが含まれています。Android Studioで `YamlParserTest` を右クリックして "Run 'YamlParserTest'" を選択するか、ターミナルで以下を実行してください：
+
+```bash
+./gradlew test
+```

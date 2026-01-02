@@ -54,9 +54,8 @@ class QuickCaptureActivity : AppCompatActivity() {
         }
 
         // 今日の日付を取得 (YYYY-MM-DD)
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        val dateString = dateFormat.format(Date())
-        val fileName = "$dateString.md"
+        val date = Date()
+        val fileName = MemoFormatter.getFileName(date)
 
         // ファイルを探す、なければ作成する
         var file = folder.findFile(fileName)
@@ -68,11 +67,8 @@ class QuickCaptureActivity : AppCompatActivity() {
             try {
                 val outputStream = contentResolver.openOutputStream(file.uri, "wa") // "wa" for write append
                 if (outputStream != null) {
-                    val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
-                    val timeString = timeFormat.format(Date())
-
                     // Thino形式: - [HH:mm] Content
-                    val contentToAppend = "\n- [$timeString] $text"
+                    val contentToAppend = MemoFormatter.formatContent(date, text)
 
                     outputStream.write(contentToAppend.toByteArray())
                     outputStream.close()

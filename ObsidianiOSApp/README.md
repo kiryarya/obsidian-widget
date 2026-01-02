@@ -48,3 +48,10 @@ iOSでは、メインアプリとウィジェット間でデータを共有す�
     *   `ObsidianApp.swift`: アプリのエントリポイント。
 *   `Widget/`: ウィジェットの実装
     *   `TaskWidget.swift`: WidgetKitの実装。
+*   `Tests/`: ユニットテスト
+    *   `TaskParserTests.swift`: タスク解析ロジックのテスト。
+
+## テストの実行
+
+1.  Xcodeで `Command + U` を押すか、メニューから `Product > Test` を選択してテストを実行します。
+2.  `Tests` ターゲットがプロジェクトに追加されており、`TaskParserTests.swift` が含まれていることを確認してください。
